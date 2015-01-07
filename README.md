@@ -1,6 +1,6 @@
 # migrate-mongodb-persistence
 
-Mixin for [`migrate`](https://npm.im/migrate) CLI that will persist current migration state to a MongoDB collection instead of a flat file.
+Mixin for [`node-migrate`](https://npm.im/migrate) CLI that will persist current migration state to a MongoDB collection instead of a flat file.
 
 This is useful when you have several transient application servers (and filesystems) sharing a single database. You only need to migrate once per database; not once per filesystem.
 
@@ -13,10 +13,10 @@ This makes `migrate` behave more like [Django South](https://south.readthedocs.o
 
     ```javascript
     var mongoDbConnectionString = 'localhost'; // or get from your config file
-    var migrationStateCollectionname = 'migration_state'; // or whatever
+    var migrationStateCollectionName = 'migration_state'; // or whatever
 
     module.exports = require('migrate-mongo-persistence')(
-        mongoDbConnectionString, migrationStateCollectionname);
+        mongoDbConnectionString, migrationStateCollectionName);
     ```
 
 3. When running the migrate cli, use your mixin like `./node_modules/.bin/migrate --use tools/store-migration-state-in-mongo.js <migrateCommand>`
