@@ -1,0 +1,16 @@
+{
+  "name": "migrate-mongodb-persistence",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^1.4.28",
+    "promise": "^6.0.1",
+    "util-extend": "^1.0.1"
+  }
+}
